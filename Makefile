@@ -1,4 +1,4 @@
-default: src/memCap src/memBw src/cpu src/l1i src/l1d src/l2 src/l3
+default: src/memCap src/memBw src/cpu src/l1i src/l1d src/l2 src/l3 docker-image
 
 src/memCap: src/memCap.c
 	g++ -o src/memCap src/memCap.c
