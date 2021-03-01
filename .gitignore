@@ -1,5 +1,6 @@
 src/cpu
 src/l1d
+src/l1i
 src/l2
 src/l3
 src/memBw

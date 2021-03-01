@@ -21,6 +21,9 @@ src/l3: src/l3.c
 src/l2: src/l2.c
 	g++ -o src/l2 src/l2.c -lrt
 
+.PHONY:
+docker-image:
+	docker build -t ibench:latest .
 
 clean:
 	rm src/memCap

@@ -1,0 +1,7 @@
+src/memCap
+src/memBw
+src/cpu
+src/l1i
+src/l1d
+src/l3
+src/l2
