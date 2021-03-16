@@ -30,6 +30,8 @@
 #include <string.h>
 #include <time.h>
 
+#define UNUSED(x) (void)(x)
+
 //#define CACHE_SIZE 2*1024*1024
 #define NS_PER_S (1000000000L)
 #define MAX_SIZE_RATIO 0.9
@@ -52,6 +54,7 @@ void remove_all_chars(char* str, char c) {
 
 long long int get_memory_size_in_bytes(void) {
 	char line[512], buffer[32];
+	UNUSED(buffer);
 	long long int column;
 	FILE *meminfo;
 
@@ -81,7 +84,7 @@ long long int get_memory_size_in_bytes(void) {
 }
 
 int main(int argc, char **argv) {
-	timespec sleepValue = {0};
+	//timespec sleepValue = {0};
 
 	/* Usage: ./l2 <duration in sec> <intensity in percentage> */
 	if (argc < 3) {

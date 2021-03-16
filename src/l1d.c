@@ -30,6 +30,8 @@
 #include <string.h>
 #include <time.h>
 
+#define UNUSED(x) (void)(x)
+
 //#define CACHE_SIZE 2*1024*1024
 #define NS_PER_S (1000000000L)
 
@@ -52,6 +54,7 @@ void remove_all_chars(char* str, char c) {
 
 int cache_size_kb(void) {
 	char line[512], buffer[32];
+	UNUSED(buffer);
 	int column;
 	FILE *cpuinfo;
 
@@ -63,7 +66,7 @@ int cache_size_kb(void) {
 
 
 	while (fgets(line, sizeof(line), cpuinfo)) {
-		char* colStr;
+		//char* colStr;
 		remove_all_chars(line, 'K'); 
 		remove_all_chars(line, 'B');
 		column = atoi(line); 

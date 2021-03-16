@@ -80,15 +80,15 @@ int main (int argc, char **argv) {
 	while (time_spent < usr_timer) {
 		clock_t begin = clock();
 
-		for (int l = 1; l <= numChunks; l++) {
+		for (unsigned int l = 1; l <= numChunks; l++) {
 			#pragma omp parallel for
-			for (int i = (l-1) * bwStreamSize; i < l * bwStreamSize; i++) {
+			for (unsigned int i = (l-1) * bwStreamSize; i < l * bwStreamSize; i++) {
 				bwData[i] = scalar * bwData[i];
 			}
 		}
 
 		#pragma omp parallel for
-		for (int i = numChunks * bwStreamSize; i < N; i++) {
+		for (unsigned int i = numChunks * bwStreamSize; i < N; i++) {
 			bwData[i] = scalar * bwData[i];
 		}
 
